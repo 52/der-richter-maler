@@ -1,0 +1,139 @@
+a.cm-widget-button_2 {
+  display: block;
+  overflow: hidden;
+  border: 1px solid;
+  box-sizing: border-box;
+  margin: auto;
+  line-height: 1.5;
+  font-size: 16px;
+  max-width: 100%;
+  padding: 15px;
+  color: currentcolor;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+  outline: 0;
+  text-decoration: none !important;
+}
+a.cm-widget-button_2:hover,
+a.cm-widget-button_2:visited {
+  color: currentcolor;
+}
+a.cm-widget-button_2 > span {
+  word-wrap: break-word;
+  transition: color 0.35s ease;
+}
+a.cm-widget-button_2.cm-w_btn-hover-border {
+  transition: box-shadow 0.25s linear;
+  box-shadow: none;
+}
+a.cm-widget-button_2.cm-w_btn-hover-invert {
+  transition: background-color 0.45s ease;
+}
+a.cm-widget-button_2.cm-w_btn-hover-slide {
+  background-size: 200% 100%;
+  background-position-x: 0;
+  transition: background-position-x 0.45s ease;
+}
+a.cm-widget-button_2.cm-w_btn-hover-slide:hover {
+  background-position-x: -100%;
+}
+a.cm-widget-button_2.cm-w_btn-hover-darken {
+  position: relative;
+}
+a.cm-widget-button_2.cm-w_btn-hover-darken:before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.35s;
+}
+a.cm-widget-button_2.cm-w_btn-hover-darken:hover:before {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+a.cm-widget-button_2.cm-w_btn-hover-darken > span {
+  position: relative;
+}
+a.cm-widget-button_2.cm-w_btn-click-none {
+  cursor: default;
+}
+.cm_widget_float_left a.cm-widget-button_2 {
+  margin-left: 0;
+}
+.cm_widget_float_right a.cm-widget-button_2 {
+  margin-right: 0;
+}
+div.cm-widget-button {
+  align-items: center;
+  display: flex;
+  border: 1px solid;
+  cursor: pointer;
+}
+div.cm-widget-button,
+div.cm-widget-button > a {
+  box-sizing: border-box;
+  height: 100%;
+  user-select: none;
+}
+div.cm-widget-button > a {
+  display: table;
+  table-layout: fixed;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+div.cm-widget-button > a,
+div.cm-widget-button > a:hover {
+  color: inherit !important;
+}
+div.cm-widget-button > a > span {
+  vertical-align: middle;
+  display: table-cell;
+  overflow: hidden;
+  color: inherit;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cm-pixel-small .cm-w_btn-responsive {
+  font-size: 1em;
+}
+.cm-pixel-medium .cm-w_btn-responsive {
+  font-size: 1.25em;
+}
+.cm-pixel-large .cm-w_btn-responsive {
+  font-size: 1.5em;
+}
+.cm-pixel-xlarge .cm-w_btn-responsive {
+  font-size: 1.75em;
+}
+.cm-w_btn-no-hover,
+.cm-w_btn-no-hover > a {
+  cursor: default;
+}
+/*
+     FILE ARCHIVED ON 12:49:07 Jul 28, 2023 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:07:56 Sep 23, 2023.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 4539.806
+  exclusion.robots: 0.083
+  exclusion.robots.policy: 0.075
+  cdx.remote: 0.053
+  esindex: 0.007
+  LoadShardBlock: 219.984 (3)
+  PetaboxLoader3.resolve: 163.729 (4)
+  PetaboxLoader3.datanode: 112.204 (4)
+  load_resource: 92.375
+*/

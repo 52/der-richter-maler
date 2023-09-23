@@ -1,0 +1,133 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+/**
+ * @brief focus point backward compatibility
+ *
+ * This class/object ensures backward compatibility with auto covering of keyvisuals and logos until Sites 3.1.
+ *
+ * private
+ */
+__cm_template_focus_point_backward_compatibility = {
+
+	/* private */
+	_isAbsoluteKVPosition: function(x, y) {
+		var isRelative = function(val) {
+			return val.match(/%$/) || val == "auto";
+		};
+		return !isRelative(x) && !isRelative(y);
+	},
+
+	/* private */
+	_hasSizeConfig: function(size) {
+		return size && size != "auto" && size != "auto auto";
+	},
+
+	/* private */
+	_applyDeprecatedKVClass(elem) {
+		var style = window.getComputedStyle(elem);
+		if (style && (!this._hasSizeConfig(style.backgroundSize) || this._isAbsoluteKVPosition(style.backgroundPositionX, style.backgroundPositionY))) {
+			elem.classList.add('cm-templates-kv-deprecated-px');
+		}
+	},
+
+	/* private */
+	_applyDeprecatedLogoClass(elem) {
+		var style = window.getComputedStyle(elem);
+		if (style && (this._isAbsoluteKVPosition(style.backgroundPositionX, style.backgroundPositionY))) {
+			elem.classList.add('cm-templates-logo-deprecated-px');
+		}
+	},
+
+	/**
+	 * @brief backward compatibility for px values in logo/kv
+	 */
+	ensure_focus_point_backward_compatibility: function() {
+		var kvDiv = document.querySelector(".cm-kv-0");
+		var slideDivs = kvDiv.querySelectorAll(".cm-slides-addon");
+		if (slideDivs.length > 0) {
+			/* slide show */
+			for (var i = 0; i < slideDivs.length; i++) {
+				this._applyDeprecatedKVClass(slideDivs[i]);
+			}
+		} else {
+			/* kv */
+			this._applyDeprecatedKVClass(kvDiv);
+		}
+		var logoDiv = document.querySelector(".cm-logo");
+		if (logoDiv) {
+			this._applyDeprecatedLogoClass(logoDiv);
+		}
+	}
+};
+
+/*
+ * @see https://www.sitepoint.com/jquery-document-ready-plain-javascript/
+ */
+(function() {
+
+	/**
+	 * @brief DOM ready handler
+	 *
+	 * This handler is called when the DOM has fully been loaded.
+	 * Functions that do template initializations can be added here.
+	 */
+	var __cm_template_init = function() {
+		/* add function invocations here */
+		__cm_template_focus_point_backward_compatibility.ensure_focus_point_backward_compatibility();
+	};
+
+	/* The callback will not be executed if the event has already been fired. So we make sure the callback is always run. */
+	if (document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll)) {
+		__cm_template_init();
+		return;
+	}
+
+	/* register callback */
+	if (document.addEventListener) {
+		document.addEventListener('DOMContentLoaded', __cm_template_init, false);
+	} else if (document.attachEvent) {
+		/* older IE versions */
+		document.attachEvent("onreadystatechange", function() {
+			// check if the DOM is fully loaded
+			if (document.readyState === "complete") {
+				// remove the listener, to make sure it isn't fired in future
+				document.detachEvent("onreadystatechange", arguments.callee);
+				// call the actual handler
+				__cm_template_init();
+			}
+		});
+	}
+})();
+
+
+}
+/*
+     FILE ARCHIVED ON 12:49:05 Jul 28, 2023 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:03:05 Sep 23, 2023.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 5518.96
+  exclusion.robots: 0.151
+  exclusion.robots.policy: 0.143
+  cdx.remote: 0.052
+  esindex: 0.007
+  LoadShardBlock: 1601.643 (3)
+  PetaboxLoader3.datanode: 2718.835 (5)
+  load_resource: 2112.404 (2)
+  PetaboxLoader3.resolve: 698.433 (2)
+*/

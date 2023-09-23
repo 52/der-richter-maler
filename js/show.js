@@ -1,0 +1,176 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+
+function selectAllCookieTypes() {
+  document.getElementById('cookieSettingsEssential').checked = true;
+  document.getElementById('cookieSettingsStatistics').checked = true;
+  document.getElementById('cookieSettingsThirdparty').checked = true;
+}
+
+function dispatchCookieSettingsEvent() {
+  var event;
+  if (typeof (Event) === 'function') {
+    event = new Event('CookieSettingsChanged');
+  } else {
+    // do not crash the IE
+    event = document.createEvent('Event');
+    event.initEvent('CookieSettingsChanged', true, true);
+  }
+  window.dispatchEvent(event);
+}
+
+function setCookieSettings(_cookieSettings) {
+  var cookieSettings = {
+    // dont save unused keys
+    essential: _cookieSettings.essential || true,
+    statistics: _cookieSettings.statistics || false,
+    thirdparty: _cookieSettings.thirdparty || false,
+    cookiesAccepted: _cookieSettings.cookiesAccepted || false,
+  };
+  if (cookieSettings) {
+    localStorage.setItem('cookieSettings', JSON.stringify(cookieSettings));
+  } else {
+    localStorage.removeItem('cookieSettings');
+  }
+  dispatchCookieSettingsEvent();
+}
+
+function getCookieSettings() {
+  var thisScript = document.getElementById('cookieSettingsScript');
+  var enabled = thisScript.dataset.cookieSettingsEnabled === 'true';
+  var tracking = thisScript.dataset.tracking === 'true';
+
+  if (!enabled) {
+    return {
+      essential: true,
+      statistics: true,
+      thirdparty: true,
+      cookiesAccepted: true,
+      enabled: false,
+      tracking: false
+    };
+  }
+
+  var defaultCookieSettings = {
+    essential: true,
+    statistics: false,
+    thirdparty: false,
+    cookiesAccepted: false,
+  };
+
+  var cookieSettings = null;
+
+  try {
+    cookieSettings = JSON.parse(localStorage.getItem('cookieSettings'));
+  } catch(e) {
+    console.log(e);
+  }
+
+  if (!cookieSettings) {
+    cookieSettings = defaultCookieSettings;
+    // setCookieSettings(cookieSettings);
+  }
+
+  cookieSettings.enabled = enabled;
+  cookieSettings.tracking = tracking;
+  return cookieSettings;
+}
+
+function initCookieSettingsDialog() {
+  var cookieSettings = getCookieSettings();
+  document.getElementById('cookieSettingsStatistics').checked = cookieSettings.statistics === true;
+  document.getElementById('cookieSettingsThirdparty').checked = cookieSettings.thirdparty === true;
+}
+
+function openCookieSettings() {
+  initCookieSettingsDialog();
+  document.getElementById('cookieSettingsDialog').classList.add('visible');
+}
+
+function closeCookieSettings() {
+  document.getElementById('cookieSettingsDialog').classList.remove('visible');
+}
+
+function saveCookieSettings() {
+  var cookieSettings = getCookieSettings();
+  var statistics = document.getElementById('cookieSettingsStatistics').checked === true;
+  var thirdparty = document.getElementById('cookieSettingsThirdparty').checked === true;
+  var reboot = cookieSettings.statistics && !statistics || cookieSettings.thirdparty && !thirdparty;
+  cookieSettings.cookiesAccepted = true;
+  cookieSettings.statistics = statistics;
+  cookieSettings.thirdparty = thirdparty;
+  setCookieSettings(cookieSettings);
+  closeCookieSettings();
+  if (reboot) {
+    document.location.reload();
+  }
+}
+
+function resetCookieSettings() {
+  setCookieSettings(null);
+}
+
+(function() {
+  var cookieSettings = getCookieSettings();
+  if (cookieSettings.enabled) {
+    window.addEventListener('CookieSettingsChanged', initCookieSettingsDialog);
+    // changed outside this document
+    window.addEventListener('storage', dispatchCookieSettingsEvent);
+    if (!cookieSettings.cookiesAccepted) {
+      openCookieSettings();
+    }
+  }
+})();
+
+
+// neu
+
+document.addEventListener('DOMContentLoaded', function() {
+  // set popup to display none if the close btn was clicked
+  var closeBtn = document.querySelector('.cm-cookie-header__close-button');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeCookieSettings);
+  }
+
+  // open the expansion panels and rotating the icon
+  var expandBtn = document.querySelectorAll('.cm-cookie-expand-wrapper');
+  for(var i = 0; i < expandBtn.length; i++ ) {
+    expandBtn[i].addEventListener('click', function() {
+      this.children[1].classList.toggle('cm-cookie-content-expansion-button--rotate');
+      this.parentNode.nextElementSibling.classList.toggle('cm-cookie-content-expansion-text--open');
+    });
+  }
+});
+
+
+}
+/*
+     FILE ARCHIVED ON 12:49:06 Jul 28, 2023 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:03:43 Sep 23, 2023.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 1316.932
+  exclusion.robots: 0.29
+  exclusion.robots.policy: 0.278
+  cdx.remote: 0.09
+  esindex: 0.014
+  LoadShardBlock: 94.328 (3)
+  PetaboxLoader3.datanode: 117.614 (4)
+  load_resource: 168.587
+  PetaboxLoader3.resolve: 78.216
+*/
