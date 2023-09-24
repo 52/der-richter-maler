@@ -154,23 +154,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 }
-/*
-     FILE ARCHIVED ON 12:49:06 Jul 28, 2023 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 16:03:43 Sep 23, 2023.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
-/*
-playback timings (ms):
-  captures_list: 1316.932
-  exclusion.robots: 0.29
-  exclusion.robots.policy: 0.278
-  cdx.remote: 0.09
-  esindex: 0.014
-  LoadShardBlock: 94.328 (3)
-  PetaboxLoader3.datanode: 117.614 (4)
-  load_resource: 168.587
-  PetaboxLoader3.resolve: 78.216
-*/

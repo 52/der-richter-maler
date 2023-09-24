@@ -82,23 +82,3 @@ function beng_widget_uri(base_uri, session_id, frame, focus, mode,
 
 
 }
-/*
-     FILE ARCHIVED ON 12:49:04 Jul 28, 2023 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 15:59:11 Sep 23, 2023.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
-/*
-playback timings (ms):
-  captures_list: 5561.711
-  exclusion.robots: 0.207
-  exclusion.robots.policy: 0.196
-  cdx.remote: 0.082
-  esindex: 0.013
-  LoadShardBlock: 1840.734 (3)
-  PetaboxLoader3.resolve: 1426.345 (5)
-  PetaboxLoader3.datanode: 552.995 (5)
-  load_resource: 485.614 (2)
-*/

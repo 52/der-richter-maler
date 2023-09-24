@@ -15,23 +15,3 @@ var URO=null;function uroMain(){return{util:{error:function(element,ticket,app){
 
 
 }
-/*
-     FILE ARCHIVED ON 12:49:04 Jul 28, 2023 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 16:02:04 Sep 23, 2023.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
-/*
-playback timings (ms):
-  captures_list: 5924.065
-  exclusion.robots: 0.239
-  exclusion.robots.policy: 0.225
-  cdx.remote: 0.113
-  esindex: 0.016
-  LoadShardBlock: 174.482 (3)
-  PetaboxLoader3.datanode: 246.703 (5)
-  load_resource: 527.319 (2)
-  PetaboxLoader3.resolve: 344.409 (2)
-*/
