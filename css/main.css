@@ -32,7 +32,7 @@ body:not(.cm-edit) .cm-templates-footer{flex-shrink:0}
 .cm-edit #keyvisual,.cm-edit #keyvisual .cm-slides-addon{top:0 !important;height:750px}
 .cm-template-keyvisual__media,.cm-slides-addon{background-size:cover;background-position:center}
 .cm-templates-kv-deprecated-px,.cm-templates-kv-deprecated-px .cm-slides-addon,.cm-slides-addon.cm-templates-kv-deprecated-px{background-position:center;background-size:cover}
-#logo{height:648px;margin:0 auto 0 -500px;position:absolute;width:1000px;left:50%;top:12%}
+#logo{height:748px;margin:0 auto 0 -500px;position:absolute;width:1000px;left:50%;top:12%}
 .cm_hide_logo #logo{height:0}
 .title_wrapper{text-align:center;top:73%;width:70%;margin:0 15%;position:absolute}
 .title{margin:0 0 20px 0}
