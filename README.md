@@ -1,1 +1,1 @@
-# Der Richter Maler
+# Der Richter & Trapp
